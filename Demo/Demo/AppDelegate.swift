@@ -9,12 +9,12 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
-    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let printTime: (() -> Void) -> Void = {
             let startTime: CFTimeInterval = CACurrentMediaTime()
@@ -28,10 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //          Track
         let cache: Cache = Cache.shareInstance
         
-//        for i in 1 ... 5 {
-//            cache.set(object: "\(i)", forKey: "\(i)")
-//        }
-//        
+        for i in 1 ... 5 {
+            cache.set(object: "\(i)" as NSCoding, forKey: "\(i)")
+        }
+        
         for i in 6 ... 7 {
             cache.set(object: "\(i)" as NSCoding, forKey: "\(i)")
         }
